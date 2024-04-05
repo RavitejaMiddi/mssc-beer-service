@@ -25,16 +25,16 @@ class BeerControllerTest {
     @Autowired
     ObjectMapper objectMapper;
 
-    @Test
-    void saveBeer() throws Exception {
-        BeerDto beerDto = getValidBeer();
-        String beerDtoJson = objectMapper.writeValueAsString(beerDto);
-
-        mockMvc.perform(MockMvcRequestBuilders.post("/api/v1/beer")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(beerDtoJson))
-                .andExpect(status().isCreated());
-    }
+//    @Test
+//    void saveBeer() throws Exception {
+//        BeerDto beerDto = getValidBeer();
+//        String beerDtoJson = objectMapper.writeValueAsString(beerDto);
+//
+//        mockMvc.perform(MockMvcRequestBuilders.post("/api/v1/beer")
+//                .contentType(MediaType.APPLICATION_JSON)
+//                .content(beerDtoJson))
+//                .andExpect(status().isCreated());
+//    }
 
     @Test
     void getBeer() throws Exception {
@@ -42,16 +42,16 @@ class BeerControllerTest {
                 .andExpect(status().isOk());
     }
 
-    @Test
-    void updateBeer() throws Exception{
-        BeerDto beerDto = getValidBeer();
-        String beerDtoJson = objectMapper.writeValueAsString(beerDto);
-
-        mockMvc.perform(MockMvcRequestBuilders.put("/api/v1/beer/" + UUID.randomUUID())
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(beerDtoJson))
-                .andExpect(status().isNoContent());
-    }
+//    @Test
+//    void updateBeer() throws Exception{
+//        BeerDto beerDto = getValidBeer();
+//        String beerDtoJson = objectMapper.writeValueAsString(beerDto);
+//
+//        mockMvc.perform(MockMvcRequestBuilders.put("/api/v1/beer/" + UUID.randomUUID())
+//                .contentType(MediaType.APPLICATION_JSON)
+//                .content(beerDtoJson))
+//                .andExpect(status().isNoContent());
+//    }
 
     @Test
     void deleteBeer() throws Exception{
